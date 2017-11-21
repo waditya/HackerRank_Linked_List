@@ -12,16 +12,20 @@
 """
 
 def Delete(head, position):
-    if(head.next = None):
+    if(head.next == None):
         return None
     else:
         node = head
         ctr = position
-        if(ctr>0):
-            prev_node = node
-            node = node.next
-            ctr = ctr - 1
-        prev_node.next = node.next
+        if(position>0):
+            while(ctr>0):
+                prev_node = node
+                node = node.next
+                ctr = ctr - 1
+            prev_node.next = node.next
+        else:
+            head = head.next
+        return head
         
   
   
