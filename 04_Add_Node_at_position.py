@@ -13,6 +13,7 @@
 """
 #This is a "method-only" submission.
 #You only need to complete this method.
+
 def InsertNth(head, data, position):
     if head==None:
         head = Node(data, None)
@@ -25,11 +26,12 @@ def InsertNth(head, data, position):
             head = new_node
             return(head)
         else :
-            while(node.next != None and ctr >0):
-                node = node.next
+            while(ctr > 0):
+                prev_node = node
+                node = node.next                
                 ctr = ctr - 1
-            new_node = Node(data, node.next)
-            node.next = new_node
+            new_node = Node(data, node)
+            prev_node.next = new_node
             return(head)
   
   
