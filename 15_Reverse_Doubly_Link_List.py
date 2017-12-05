@@ -28,7 +28,7 @@ def Reverse(head):
                 node = node.next
             else:
                 flag = False
-        
+        head = node
         ##Reverse the node one-by-one
         ##Assign previous node the value of next node
         ##Assign next node the value of prev_node
@@ -40,17 +40,14 @@ def Reverse(head):
         prev_node = node.prev
         
         while(flag):
-            
-            if(flag1):
                 node.prev = node.next
-                node.next = prev_node
+                node.next = prev_node                
                 if(node.next != None):
                     prev_node = prev_node.prev
-                    node = node.next
-                    flag1 = False
+                    node = node.next                    
                 else:
                     flag = False
-        return(node)
+        return(head)
                 
                 
                 
